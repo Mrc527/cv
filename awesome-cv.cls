@@ -89,7 +89,6 @@
   pdfkeywords={}
 }
 
-
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
 %-------------------------------------------------------------------------------
@@ -161,7 +160,7 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
+%\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
   Path=\@fontdir,
@@ -604,8 +603,21 @@
       {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
   \end{tabular*}%
+}
+% Define an entry of cv information
+% Usage: \cventrynodata{<position>}{<title>}{<location>}{<date>}{<description>}
+\newcommand*{\cventrynodata}[4]{%
+\vspace{-2.0mm}
+\setlength\tabcolsep{0pt}
+\setlength{\extrarowheight}{0pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+	\ifempty{#2#3}
+	{\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+	{\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+		\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+\end{tabular*}%
 }
 
 % Define an environment for cvsubentry
@@ -650,13 +662,35 @@
   \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
 }
 
+\newcommand{\cvtag}[1]{%
+	\tikz[baseline]\node[anchor=base,draw=black!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{\skillsetstyle{#1}};
+}
+
+% Define an environment for cvlanguages
+\newenvironment{cvlanguages}{%
+	\vspace{\acvSectionContentTopSkip}
+	\vspace{-2.0mm}
+	\begin{center}
+		\setlength\tabcolsep{1ex}
+		\setlength{\extrarowheight}{0pt}
+		\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
+		}{%
+		\end{tabular*}
+	\end{center}
+}
+% Define a line of cv information(language)
+% Usage: \cvlanguage<language>}{<grade>}
+\newcommand*{\cvlanguage}[2]{%
+	\skilltypestyle{#1} & \skillsetstyle{#2} \\
+}
+
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
   \vspace{\acvSectionContentTopSkip}
   \vspace{-2.0mm}
   \begin{center}
     \setlength\tabcolsep{1ex}
-    \setlength{\extrarowheight}{0pt}
+    \setlength{\extrarowheight}{2pt}
     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} r L{\textwidth * \real{0.9}}}
 }{%
     \end{tabular*}

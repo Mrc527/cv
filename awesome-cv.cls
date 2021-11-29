@@ -735,6 +735,16 @@
   \par\nobreak\addvspace{0.4ex}
 }
 
+% Define a section for the cover letter
+% Usage: \lettersectionreduced{<section-title>}
+\newcommand{\lettersectionreduced}[1]{%
+	\par\addvspace{0.5ex}
+	\phantomsection{}
+	\lettersectionstyle{#1}
+	\color{gray}\vhrulefill{0.9pt}
+	\par\nobreak\addvspace{0.4ex}
+}
+
 % Define a title of the cover letter
 % Usage: \makelettertitle
 \newcommand*{\makelettertitle}{%
@@ -750,7 +760,24 @@
   \ifthenelse{\isundefined{\@lettertitle}}
     {}
     {\lettertitlestyle{\@lettertitle} \\}
-  \lettertextstyle{\@letteropening}
+    
+    \ifthenelse{\isundefined{\@letteropening}}
+    {}
+    {\lettertextstyle{\@letteropening}}
+}
+
+
+% Define a title of the cover letter
+% Usage: \makelettertitle
+\newcommand*{\makelettertitlereduced}{%
+	\setlength\tabcolsep{0pt}
+	\setlength{\extrarowheight}{0pt}
+	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+		\recipienttitlestyle{\@recipientname} & \letterdatestyle{\@letterdate}
+	\end{tabular*}
+	\begin{singlespace}
+		\recipientaddressstyle{\@recipientaddress} \\\\
+	\end{singlespace}
 }
 
 % Define a closing of the cover letter

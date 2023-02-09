@@ -1,0 +1,13 @@
+{
+    "explorer.confirmDelete": false,
+    "latex-workshop.latex.recipes": [
+
+    
+        {
+            "name": "latexmk (lualatex)",
+            "tools": [
+                "lualatexmk"
+            ]
+        }
+    ]
+}

@@ -10,7 +10,7 @@
   This is my current CV, feel free to use it as a template. Have a look in the example folder 😉
   
   <p align="center">
-    <a href="https://github.com/Mrc527/cv">
+    <a href="https://github.com/Mrc527/cv/raw/master/resume.pdf">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/1667px-PDF_file_icon.svg.png" width="17px" height="20px"> Download my full CV
     </a>
   </p>

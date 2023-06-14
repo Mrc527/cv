@@ -24,3 +24,4 @@
 
 *.gz
 resume.fdb_latexmk
+.idea

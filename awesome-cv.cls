@@ -133,10 +133,10 @@
 \definecolor{blue}{HTML}{6CE0F1}
 % Text colors
 \definecolor{darktext}{HTML}{414141}
-\colorlet{text}{darkgray}
-\colorlet{graytext}{gray}
-\colorlet{lighttext}{lightgray}
-\colorlet{sectiondivider}{gray}
+\colorlet{text}{black}
+\colorlet{graytext}{black}
+\colorlet{lighttext}{gray}
+\colorlet{sectiondivider}{black}
 % Awesome colors
 \definecolor{awesome-emerald}{HTML}{00A388}
 \definecolor{awesome-skyblue}{HTML}{0395DE}
@@ -788,7 +788,7 @@
 	\par\addvspace{0.5ex}
 	\phantomsection{}
 	\lettersectionstyle{#1}
-	\color{gray}\vhrulefill{0.9pt}
+	\color{black}\vhrulefill{0.9pt}
 	\par\nobreak\addvspace{0.4ex}
 }
 

@@ -133,10 +133,10 @@
 \definecolor{blue}{HTML}{6CE0F1}
 % Text colors
 \definecolor{darktext}{HTML}{414141}
-\colorlet{text}{darkgray}
-\colorlet{graytext}{gray}
-\colorlet{lighttext}{lightgray}
-\colorlet{sectiondivider}{gray}
+\colorlet{text}{black}
+\colorlet{graytext}{black}
+\colorlet{lighttext}{gray}
+\colorlet{sectiondivider}{black}
 % Awesome colors
 \definecolor{awesome-emerald}{HTML}{00A388}
 \definecolor{awesome-skyblue}{HTML}{0395DE}
@@ -641,7 +641,7 @@
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[6]{%
-  \vspace{-2.0mm}
+  \vspace{-1.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 2.0cm} R{2.0cm}}
@@ -788,7 +788,7 @@
 	\par\addvspace{0.5ex}
 	\phantomsection{}
 	\lettersectionstyle{#1}
-	\color{gray}\vhrulefill{0.9pt}
+	\color{black}\vhrulefill{0.9pt}
 	\par\nobreak\addvspace{0.4ex}
 }
 

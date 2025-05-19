@@ -1,0 +1,41 @@
+{
+    "name": "LaTeX CV",
+    "image": "mingc/latex",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/data,type=bind,consistency=cached",
+    "workspaceFolder": "/data",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "james-yu.latex-workshop",
+                "tecosaur.latex-utilities",
+                "streetsidesoftware.code-spell-checker"
+            ],
+            "settings": {
+                "latex-workshop.latex.tools": [
+                    {
+                        "name": "xelatex",
+                        "command": "xelatex",
+                        "args": [
+                            "-synctex=1",
+                            "-interaction=nonstopmode",
+                            "-file-line-error",
+                            "%DOC%"
+                        ]
+                    }
+                ],
+                "latex-workshop.latex.recipes": [
+                    {
+                        "name": "XeLaTeX",
+                        "tools": [
+                            "xelatex"
+                        ]
+                    }
+                ],
+                "latex-workshop.view.pdf.viewer": "tab",
+                "editor.formatOnSave": true,
+                "editor.wordWrap": "on",
+                "latex-workshop.latex.autoBuild.run": "onSave"
+            }
+        }
+    }
+}
